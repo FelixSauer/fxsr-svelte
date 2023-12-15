@@ -1,0 +1,93 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "fxsr api collection",
+    "dateExported": "2023-11-22T20:22:59.978Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "232a6924-98a7-4dc1-b6f2-54774dfc4eee",
+            "colId": "89e4bad1-b524-4dff-857d-9f1bccca4b79",
+            "containerId": "",
+            "name": "Pages",
+            "url": "http://localhost:5173/api/pages",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-22T20:21:25.517Z",
+            "modified": "2023-11-22T20:21:25.517Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "54fb71d0-ce3f-448b-9d54-89b473b3f7b9",
+            "colId": "89e4bad1-b524-4dff-857d-9f1bccca4b79",
+            "containerId": "",
+            "name": "Main Menu",
+            "url": "http://localhost:5173/api/mainmenu",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-22T20:21:59.597Z",
+            "modified": "2023-11-22T20:21:59.597Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "94f2cf4a-19fe-4602-b633-61c301c94265",
+            "colId": "89e4bad1-b524-4dff-857d-9f1bccca4b79",
+            "containerId": "",
+            "name": "Footer Menu",
+            "url": "http://localhost:5173/api/footermenu",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-22T20:22:10.398Z",
+            "modified": "2023-11-22T20:22:10.398Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c81809fd-865e-4c1e-b2c7-7f4b9c3ad897",
+            "colId": "89e4bad1-b524-4dff-857d-9f1bccca4b79",
+            "containerId": "",
+            "name": "Person",
+            "url": "http://localhost:5173/api/person",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-11-22T20:22:17.648Z",
+            "modified": "2023-11-22T20:22:17.648Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "eb1f3f0d-2ca4-4bd6-ad3d-600f2d65ea0c",
+            "colId": "89e4bad1-b524-4dff-857d-9f1bccca4b79",
+            "containerId": "",
+            "name": "Work",
+            "url": "http://localhost:5173/api/work",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-11-22T20:22:24.442Z",
+            "modified": "2023-11-22T20:22:24.442Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "98cde4f2-f3d3-4946-b977-c7c9816cc2d5",
+            "colId": "89e4bad1-b524-4dff-857d-9f1bccca4b79",
+            "containerId": "",
+            "name": "skills",
+            "url": "http://localhost:5173/api/skills",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-11-22T20:22:37.482Z",
+            "modified": "2023-11-22T20:22:37.482Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
