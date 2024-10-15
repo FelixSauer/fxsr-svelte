@@ -46,7 +46,7 @@
 		</div>
 		<span>
 			<Typewriter interval="75">
-				<h1>~ felixsauer</h1>
+				<h1>>_ fsxr ==> felix sauer webdeveloper</h1>
 			</Typewriter>
 		</span>
 	</div>
@@ -87,6 +87,10 @@
 
 <style lang="scss">
 	@import '../../app.scss';
+
+	h1 {
+		font-family: FiraCode, monospace;
+	}
 
 	nav {
 		display: flex;

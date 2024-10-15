@@ -24,7 +24,7 @@ export interface Work {
 }
 
 export interface Project {
-	clientName: string;
+	name: string;
 	role?: Role[];
 	description?: string;
 	link?: string;

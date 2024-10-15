@@ -2,23 +2,15 @@ import type { MenuItem } from './MenuItem';
 
 export const MainMenu: MenuItem[] = [
 	{
-		label: 'hey there!',
+		label: 'whoami',
 		target: 'landing',
-		icon: 'material-symbols-light:flight-land',
+		icon: 'line-md:person',
 		internal: true,
 		alignRight: true
 	},
 	{
-		label: 'About',
-		target: 'about',
-		icon: 'material-symbols-light:frame-person',
-		internal: true,
-		alignRight: true
-	},
-	{
-		label: 'Leistungen',
+		label: 'services',
 		target: 'services',
-		disable: true,
 		icon: 'material-symbols-light:design-services',
 		internal: true,
 		alignRight: true

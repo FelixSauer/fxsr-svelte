@@ -12,7 +12,7 @@
 		crossorigin="anonymous"
 		referrerpolicy="no-referrer"
 	/>
-	<title>~ fxsr consulting and development</title>
+	<title>>_ felix sauer</title>
 </svelte:head>
 
 <Navigation />

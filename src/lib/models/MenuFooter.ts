@@ -11,14 +11,12 @@ export const FooterMenu: MenuItem[] = [
 		target: 'https://www.linkedin.com/in/felix-sauer/',
 		icon: 'line-md:linkedin'
 	},
-
 	{
 		label: 'patreon',
 		target: 'patreon.com/fxsr',
 		icon: 'line-md:patreon',
 		disable: true
 	},
-
 	{
 		label: 'buymeacoffee',
 		target: 'https://www.buymeacoffee.com/felixsauer',

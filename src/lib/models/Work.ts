@@ -1,25 +1,31 @@
-export interface Work {
+export interface IWork {
 	companyName: string;
 	start: string;
 	end: string;
-	role?: Role[];
+	role?: IRole[];
 	description?: string;
+	branch?: string;
 	link?: string;
-	projects?: Project[];
+	icon?: string;
+	img?: string;
+	projects?: IProject[];
 }
 
-export interface Project {
-	clientName: string;
-	role?: Role[];
+export interface IProject {
+	name: string;
+	role?: IRole[];
 	description?: string;
+	branch?: string;
 	link?: string;
+	icon?: string;
+	img?: string;
 }
 
-export interface Role {
+export interface IRole {
 	name: string;
 }
 
-export enum RoleEnum {
+export enum ERole {
 	ITConsultant = 'IT Consultant',
 	SoftwareEngineer = 'Software Engineer',
 	FrontendEngineer = 'Frontend Engineer',
@@ -29,112 +35,116 @@ export enum RoleEnum {
 	DataEntryClerk = 'Data Entry Clerk'
 }
 
-export const work: Work[] = [
+export const work: IWork[] = [
 	{
-		companyName: 'Exxeta GmbH',
-		start: 'Feb. 2022',
+		companyName: 'Exxeta',
 		end: 'now',
-		role: [{ name: RoleEnum.ITConsultant }],
+		start: 'Feb. 2022',
+		role: [{ name: ERole.ITConsultant }],
 		description: 'Consulting for various clients in the automotive industry.',
 		projects: [
 			{
-				clientName: 'ipoque',
-				description: 'Development of a web application for the Daimler AG.',
-				link: 'https://www.ipoque.com/'
+				name: 'emag',
+				description: 'Monitoring and analyse Portal',
+				branch: 'mechanical engineering',
+				link: 'https://www.emag.com/',
+				img: 'src/lib/assets/icons/emag.svg'
+			},
+
+      {
+				name: 'ipoque',
+				description: 'Management Portal',
+				branch: 'Telecommunication',
+				link: 'https://www.ipoque.com/',
+				img: 'src/lib/assets/icons/rohdeschwarz.svg'
 			},
 			{
-				clientName: 'Daimler Truck',
-				role: [{ name: RoleEnum.FrontendEngineer }, { name: RoleEnum.BackendEngineer }],
-				description: 'Development of a web application for the Porsche AG.',
-				link: 'https://www.daimlertruck.com/'
+				name: 'Daimler Truck',
+				role: [{ name: ERole.FrontendEngineer }, { name: ERole.BackendEngineer }],
+				description: 'B2B Management Portal',
+				branch: 'Automotive',
+				link: 'https://www.daimlertruck.com/',
+				icon: 'simple-icons:mercedes'
 			}
 		]
 	},
 	{
-		companyName: 'Diconium GmbH',
-		start: 'Feb. 2017',
+		companyName: 'Diconium',
 		end: 'Jan. 2022',
+		start: 'Feb. 2017',
 		role: [
-			{ name: RoleEnum.FrontendEngineer },
-			{ name: RoleEnum.IncidentManager },
-			{ name: RoleEnum.DevOpsEngineer }
+			{ name: ERole.FrontendEngineer },
+			{ name: ERole.IncidentManager },
+			{ name: ERole.DevOpsEngineer }
 		],
-		description:
-			'Development of web applications and websites for various clients. Incident Management for the diconium group.',
+		description: 'Development of web applications and websites for various clients.',
+		icon: '',
 		projects: [
 			{
-				clientName: 'Volkswagen AG',
+				name: 'Volkswagen',
 				role: [
-					{ name: RoleEnum.FrontendEngineer },
-					{ name: RoleEnum.DevOpsEngineer },
-					{ name: RoleEnum.IncidentManager }
+					{ name: ERole.FrontendEngineer },
+					{ name: ERole.DevOpsEngineer },
+					{ name: ERole.IncidentManager }
 				],
-				description: 'Development of a web application for the Daimler AG.',
-				link: 'https://www.volkswagen.de/'
+				description: 'B2B Management Portal',
+				branch: 'Automotive',
+				link: 'https://www.volkswagen.de/',
+				icon: 'simple-icons:volkswagen'
 			},
 			{
-				clientName: 'Porsche AG',
-				role: [{ name: RoleEnum.FrontendEngineer }],
-				description: 'Development of a web application for the Porsche AG.',
-				link: 'https://www.porsche.com/'
+				name: 'Porsche',
+				role: [{ name: ERole.FrontendEngineer }],
+				description: 'B2C Dealer Portal',
+				branch: 'Automotive',
+				link: 'https://www.porsche.com/',
+				icon: 'simple-icons:porsche'
 			},
 			{
-				clientName: 'Footlocker',
-				role: [{ name: RoleEnum.IncidentManager }],
-				description: 'Development of a web application for the Häfele SE & Co KG.',
-				link: 'https://www.footlocker.de/'
+				name: 'Footlocker',
+				role: [{ name: ERole.IncidentManager }],
+				branch: 'Brands & Retail',
+				description: 'B2C Dealer Portal',
+				link: 'https://www.footlocker.de/',
+				img: 'src/lib/assets/icons/footlocker.svg'
 			},
 			{
-				clientName: 'Häfele SE & Co KG',
-				role: [{ name: RoleEnum.FrontendEngineer }, { name: RoleEnum.IncidentManager }],
-				description: 'Development of a web application for the Häfele SE & Co KG.',
-				link: 'https://www.haefele.de/'
+				name: 'Häfele',
+				role: [{ name: ERole.FrontendEngineer }, { name: ERole.IncidentManager }],
+				description: 'B2B & B2C Dealer Portal',
+				branch: 'Brands & Retail',
+				link: 'https://www.haefele.de/',
+				img: 'src/lib/assets/icons/haefele.svg'
 			},
 			{
-				clientName: 'STIHL Vertriebszentrale AG & Co. KG',
-				role: [{ name: RoleEnum.FrontendEngineer }, { name: RoleEnum.IncidentManager }],
-				description: 'Development of a web application for the Porsche AG.',
-				link: 'https://www.stihl.de/'
+				name: 'STIHL',
+				role: [{ name: ERole.FrontendEngineer }, { name: ERole.IncidentManager }],
+				description: 'B2C Dealer Portal',
+				branch: 'Brands & Retail',
+				link: 'https://www.stihl.de/',
+				img: 'src/lib/assets/icons/stihl.svg'
 			},
 			{
-				clientName: 'Kodak',
-				role: [{ name: RoleEnum.FrontendEngineer }, { name: RoleEnum.IncidentManager }],
-				description: 'Development of a web application for the Porsche AG.',
-				link: 'https://www.kodak.com/'
+				name: 'Kodak',
+				role: [{ name: ERole.FrontendEngineer }, { name: ERole.IncidentManager }],
+				description: 'B2C Dealer Portal',
+				branch: 'Brands & Retail',
+				link: 'https://www.kodak.com/',
+				icon: 'simple-icons:kodak'
 			},
 			{
-				clientName: 'Aventics GmbH',
-				role: [{ name: RoleEnum.FrontendEngineer }],
-				description: 'Development of a web application for the Aventics GmbH.'
+				name: 'Aventics',
+				role: [{ name: ERole.FrontendEngineer }],
+				branch: 'Brands & Retail',
+				description: 'B2B Dealer Portal'
 			}
 		]
 	},
 	{
-		companyName: 'EnBW Energie Baden-Württemberg AG',
-		start: 'Jul. 2016',
+		companyName: 'EnBW Energie',
 		end: 'Dez. 2022',
-		role: [{ name: RoleEnum.DataEntryClerk }],
-		description:
-			'Development of web applications and websites for various clients. Incident Management for the diconium group.'
-	},
-	{
-		companyName: 'my self',
-		start: 'Jul. 2001',
-		end: 'Jun. 2022',
-		role: [{ name: RoleEnum.SoftwareEngineer }, { name: RoleEnum.IncidentManager }],
-		description:
-			'Development of web applications and websites for various clients. Incident Management for the diconium group.',
-		projects: [
-			{
-				clientName: 'Jonathan Tilley',
-				role: [{ name: RoleEnum.FrontendEngineer }],
-				description: ''
-			},
-			{
-				clientName: 'Ascawo',
-				role: [{ name: RoleEnum.ITConsultant }],
-				description: 'Technischeberatung und Entwicklung für die ascawo GmbH.'
-			}
-		]
+		start: 'Jul. 2016',
+		role: [{ name: ERole.DataEntryClerk }],
+		description: 'Development of web applications and websites for various clients.'
 	}
 ];

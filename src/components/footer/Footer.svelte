@@ -4,6 +4,7 @@
 	import type { MenuItem } from '$lib/models/MenuItem';
 
 	let menu: MenuItem[] = [];
+	let year = new Date().getFullYear();
 
 	async function fetchFooterMenu() {
 		const res = await fetch(`/api/menufooter`);
@@ -27,13 +28,15 @@
 				/>
 			</li>
 		{/each}
+		<li>
+			© {year} fxsr
+		</li>
 	</ul>
 </footer>
 
 <style lang="scss">
 	footer {
-		display: grid;
-		grid-template-columns: repeat(16, 1fr);
+		padding-left: 6em;
 		gap: 0.75rem;
 		position: fixed;
 		bottom: 0;
@@ -42,7 +45,6 @@
 
 		ul {
 			display: flex;
-			grid-column: 2 / 16;
 			flex-direction: row;
 			list-style: none;
 			padding: unset;

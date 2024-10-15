@@ -1,11 +1,12 @@
 <script lang="ts">
+	import type { IPage } from '$lib/models/Pages';
 	import { onMount } from 'svelte';
-	import type { Page } from '$lib/models/Pages';
 	import TemplateWrapper from '../components/templates/wrapper/Wrapper.svelte';
 	import { navigationIsVisible, sectionIsVisible } from '$lib/store';
 	import { Jumper } from 'svelte-loading-spinners';
+	import { page } from '$app/stores';
 
-	let pages: Page[] = [];
+	let pages: IPage[] = [];
 	let currentPage = 1;
 	let navActive: boolean = false;
 
@@ -14,16 +15,16 @@
 	});
 
 	async function fetchPages() {
-		const response = await fetch(`/api/pages`);
+		let response = await fetch(`/api/pages`);
 		const fetchedPages = await response.json();
 		pages = [...pages, ...fetchedPages];
 		currentPage++;
 	}
 
 	function scrollHandler() {
-		const observer = new IntersectionObserver((element) => {
-			const fadeInTopPoint = window.innerHeight * 0.6;
-			const fadeInBottomPoint = window.innerHeight * 0.3;
+		const observer: IntersectionObserver = new IntersectionObserver((element) => {
+			const fadeInTopPoint: number = window.innerHeight * 0.6;
+			const fadeInBottomPoint: number = window.innerHeight * 0.3;
 			const leafs: any[] = [];
 
 			element.map((entry) => leafs.push([entry.target.id, entry.boundingClientRect]));
@@ -52,25 +53,15 @@
 
 <svelte:window on:scroll={scrollHandler} />
 
-{#await pages}
-	<Jumper size="60" color="#FF3E00" unit="px" duration="1s" />
-{:then a}
-	<main class:nav-active={navActive}>
-		{#each pages as page}
-			<section id={page.htmlTarget}>
-				<TemplateWrapper {page} />
-			</section>
-		{/each}
-	</main>
-{/await}
+<main class:nav-active={navActive}>
+	{#each pages as page}
+		<section id={page.htmlTarget}>
+			<TemplateWrapper {page} />
+		</section>
+	{/each}
+</main>
 
 <style lang="scss">
-	main {
-		display: grid;
-		width: 100%;
-		height: 100%;
-	}
-
 	.nav-active {
 		animation: fadeBackground 2s;
 		filter: blur(5px);
@@ -83,9 +74,5 @@
 				filter: blur(5px);
 			}
 		}
-	}
-	section {
-		min-height: 100vh;
-		margin-bottom: 50px;
 	}
 </style>

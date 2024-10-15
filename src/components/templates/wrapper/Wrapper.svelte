@@ -1,15 +1,16 @@
 <script lang="ts">
-	import type { Page } from '$lib/models/Pages';
+	import type { IPage } from '$lib/models/Pages';
 	import { onMount } from 'svelte';
 
-	export let page: Page;
+	export let page: IPage;
 	let template: any;
 
 	onMount(async () => {
 		if (page.name === 'landing') {
+      console.log(
+        'Hallo'
+      )
 			template = (await import('../landing/Landing.svelte')).default;
-		} else if (page.name === 'about') {
-			template = (await import('../about/About.svelte')).default;
 		} else if (page.name === 'services') {
 			template = (await import('../services/Services.svelte')).default;
 		} else if (page.name === 'contact') {
